@@ -1,0 +1,220 @@
+.body-content
+  .page-overview-wrapper
+    %h1 Bags
+    %select.browser-default.date-selector
+      %option{disabled: true, selected: true} Last 14 Days
+
+    .clear
+
+    %ul.section-nav
+      %li
+        =link_to "Overview", categories_sample_path
+      %li
+        =link_to "All Images", categories_sample_images_path
+      %li
+        =link_to "Image Attributes", categories_sample_creative_path
+      %li.selected
+        =link_to "Audience", categories_sample_audience_path
+
+    -# %a.main-cta.btn-floating.btn-large.waves-effect.waves-light
+      .fa.fa-plus.fa-2x
+
+    =link_to "< Back To Categories", categories_path, class: "breadcrumbs"
+
+  .container.container-fluid
+    .row
+      .col.s12
+        %ul.audience-engagement-btns
+          %li.btn.selected Likers
+          %li.btn.btn-flat Commenters
+          %li.btn.btn-flat Regrammers
+
+    .row
+      .col.s6
+        .card{style: "height:323px;"}
+          .card-content
+            .card-title Viewers
+            .row
+              .col.s5
+                .conversion-metric-wrapper
+                  %p 100,000
+                  %p Viewers
+              .col.s2
+                .fa.fa-long-arrow-right.fa-5x{style: "margin-top: 40px;"}
+                %p{style: "text-align: center; font-size: 24px; font-weight: bold;"} 30%
+                %p{style: "font-size: 12px; text-align: center;'"} Conversion Rate
+
+              .col.s5
+                .conversion-metric-wrapper{style: "background-color:#E63D2F;color: white;"}
+                  %p 10,000
+                  %p Likes
+      .col.s6
+        .card
+          .card-content
+            .card-title Followers vs. Non-Followers
+
+            .row.margin-none
+              .col.s5.offset-s1
+                .audience-metric-wrapper{style: "background-color:#E63D2F;color:white;"}
+                  %p 4000
+                  %p Likes From Followers
+
+                .audience-metric-wrapper
+                  %p 6000
+                  %p Likes From Non-Followers
+              .col.s6
+                #follower-chart
+
+    .row
+      .col.s6
+        .card{style: "height:332px;"}
+          .card-content
+            .card-title Top 5 Locations
+
+            .row
+              .col.s1.offset-s1
+                %p 1)
+              .col.s4
+                %p.city New York City
+              .col.s6
+                %p.city-metric
+                  %span 15%
+                  %span 1500 Likes
+            .row
+              .col.s1.offset-s1
+                %p 2)
+              .col.s4
+                %p.city San Francisco
+              .col.s6
+                %p.city-metric
+                  %span 10%
+                  %span 1000 Likes
+            .row
+              .col.s1.offset-s1
+                %p 3)
+              .col.s4
+                %p.city Los Angeles
+              .col.s6
+                %p.city-metric
+                  %span 8%
+                  %span 800 Likes
+            .row
+              .col.s1.offset-s1
+                %p 4)
+              .col.s4
+                %p.city Miami
+              .col.s6
+                %p.city-metric
+                  %span 6%
+                  %span 600 Likes
+            .row
+              .col.s1.offset-s1
+                %p 5)
+              .col.s4
+                %p.city Chicago
+              .col.s6
+                %p.city-metric
+                  %span 5%
+                  %span 500 Likes
+
+      .col.s6
+        .card
+          .card-content
+            .card-title Device
+            .row
+              .col.s4
+                .device-metric-wrapper
+                  .fa.fa-desktop.fa-5x
+                  %p Desktop
+                  .audience-metric-wrapper
+                    %p 10%
+                    %p 1000 Likes
+              .col.s4
+                .device-metric-wrapper
+                  .fa.fa-tablet.fa-5x
+                  %p Tablet
+                  .audience-metric-wrapper
+                    %p 20%
+                    %p 2000 Likes
+              .col.s4
+                .device-metric-wrapper
+                  .fa.fa-mobile.fa-5x
+                  %p Mobile
+                  .audience-metric-wrapper
+                    %p 70%
+                    %p 7000 Likes
+
+    .row
+      .col.s6
+        .card
+          .card-content
+            .card-title Age Range
+            
+            .age-chart-wrapper
+              #age-chart
+
+      .col.s6
+        .card
+          .card-content
+            .card-title Gender
+
+            .row
+              .col.s6
+                .row.margin-none
+                  .col.s4.offset-s1
+                    .fa.fa-male.fa-5x
+                    %p Male
+                  .col.s6
+                    .audience-metric-wrapper
+                      %p 10%
+                      %p 1000 Likes
+              .col.s6
+                .row.margin-none
+                  .col.s4.offset-s1
+                    .fa.fa-female.fa-5x
+                    %p Female
+                  .col.s6
+                    .audience-metric-wrapper
+                      %p 90%
+                      %p 9000 Likes
+
+
+:javascript
+  $(document).ready(function(){
+    var age_chart = c3.generate({
+      bindto: '#age-chart',
+      size: {height: 130},
+      data:{
+        columns: [
+          ['18-24', 500],
+          ['25-34', 4000],
+          ['35-44', 4500],
+          ['45-54', 700],
+          ['55+', 300]
+        ],
+        type: 'bar'
+      },
+      axis: {rotated: true}
+    })
+
+    var follower_chart = c3.generate({
+      bindto: "#follower-chart",
+      size: {height: 200},
+      data: {
+        columns: [
+          ['Followers', 4000],
+          ['Non-Followers', 6000]
+        ],
+        colors:{
+          'Followers': '#E63D2F',
+          'Non-Followers': '#E0E0E0'
+        },
+        type: 'donut'
+      },
+      donut: {
+        label: {
+          show: false
+        }
+      }
+    })
+  })

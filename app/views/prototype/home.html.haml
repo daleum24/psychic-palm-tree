@@ -1,0 +1,66 @@
+.body-content
+  .page-overview-wrapper
+    %h1 Images
+
+    .clear
+
+    %ul.section-nav
+      %li.selected
+        %a Latest
+      %li
+        %a All Images
+      %li
+        %a Categories
+
+  .container.container-fluid
+    .row
+      .col.s12
+        .card
+          .card-content
+            .card-title 7 Day Summary
+
+            .col.s4
+              .images-performance-summary
+                %p User will want to know the following:
+                %ul
+                  %li Was it a successful week?
+                  %li What did I do right this week?
+                  %li What did I not do right this week?
+
+
+                %p Once the user has absorbed this information, the user will need to figure out what to post next
+            .col.s8
+              .images-collection
+                -@latest_images.each_with_index do |image_obj, idx|
+                  .col.s3
+                    .image-obj
+                      .image-wrapper
+                        %img{src: image_obj[:url]}
+                      .image-details
+                        .image-detail
+                          .fa.fa-heart
+                          %span=image_obj[:likes]
+                        .image-detail
+                          .fa.fa-comment
+                          %span=image_obj[:comments]
+                        .clear
+                .clear
+          .clear
+    .row
+      .col.s6
+        .card.nav-card
+          .card-content
+            .card-title TBD
+      .col.s6
+        .card.nav-card
+          .card-content
+            .card-title TBD
+    .row
+      .col.s6
+        .card.nav-card
+          .card-content
+            .card-title TBD
+      .col.s6
+        .card.nav-card
+          .card-content
+            .card-title TBD

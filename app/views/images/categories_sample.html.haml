@@ -1,0 +1,218 @@
+.body-content
+  .page-overview-wrapper
+    %h1 Bags
+    %select.browser-default.date-selector
+      %option{disabled: true, selected: true} Last 14 Days
+
+    .clear
+
+    %ul.section-nav
+      %li.selected
+        =link_to "Overview", categories_sample_path
+      %li
+        =link_to "All Images", categories_sample_images_path
+      %li
+        =link_to "Image Attributes", categories_sample_creative_path
+      %li
+        =link_to "Audience", categories_sample_audience_path
+
+    =link_to "< Back To Categories", categories_path, class: "breadcrumbs"
+
+  .container.container-fluid
+    .row
+      .col.s3
+        .card.category-hl-metric-card
+          .card-content
+            .card-title Bag Images Posted
+            %p.main-metric 9
+            .chart-wrapper
+              #images-chart
+            %p{style: "text-align:center;margin-top:10px;font-size:16px;"} Of All Images Posted During Last 14 Days
+
+
+
+      .col.s3
+        .card.category-hl-metric-card
+          .card-content
+            .card-title Likes
+            %p.main-metric 12,000
+            .chart-wrapper
+              #likes-chart
+            .row.metrics-wrapper.mbm
+              .col.s6
+                %p 1333
+                %p / Bag Image
+              .col.s6
+                %p 1200
+                %p / Non-Bag Image
+
+      .col.s3
+        .card.category-hl-metric-card
+          .card-content
+            .card-title Comments
+            %p.main-metric 500
+            .chart-wrapper
+              #comments-chart
+            .row.metrics-wrapper.mbm
+              .col.s6
+                %p 55
+                %p / Bag Image
+              .col.s6
+                %p 40
+                %p / Non-Bag Image
+
+
+      .col.s3
+        .card.category-hl-metric-card
+          .card-content
+            .card-title Regrams
+            %p.main-metric 150
+            .chart-wrapper
+              #regrams-chart
+            .row.metrics-wrapper.mbm
+              .col.s6
+                %p 20
+                %p / Bag Image
+              .col.s6
+                %p 10
+                %p / Non-Bag Image
+
+    .row
+      .col.s6
+        .card
+          .card-content
+            .card-title Top Performers
+            .row
+              .col.s4
+                .image-wrapper
+                  %img{src: "https://scontent-lga3-1.cdninstagram.com/hphotos-xfa1/t51.2885-15/s640x640/sh0.08/e35/c0.10.1080.1080/12345728_525051810997953_614409473_n.jpg"}
+              .col.s4
+                .image-wrapper
+                  %img{src: "https://scontent-lga3-1.cdninstagram.com/hphotos-xpa1/t51.2885-15/s640x640/sh0.08/e35/c0.0.1079.1079/12331421_1657521984464397_1790469623_n.jpg"}
+              .col.s4
+                .image-wrapper
+                  %img{src: "https://scontent-lga3-1.cdninstagram.com/hphotos-xfp1/t51.2885-15/s640x640/sh0.08/e35/c0.23.750.750/12356345_1091780057513241_1034412660_n.jpg"}
+      .col.s6
+        .card
+          .card-content
+            .card-title Weak Performers
+            .row
+              .col.s4
+                .image-wrapper
+                  %img{src: "https://scontent-lga3-1.cdninstagram.com/hphotos-xpf1/t51.2885-15/e35/12357544_450091828514341_1038922104_n.jpg"}
+              .col.s4
+                .image-wrapper
+                  %img{src: "https://scontent-lga3-1.cdninstagram.com/hphotos-xft1/t51.2885-15/e35/12353929_1664355553812878_612128653_n.jpg"}
+              .col.s4
+                .image-wrapper
+                  %img{src: "https://scontent-lga3-1.cdninstagram.com/hphotos-xtp1/t51.2885-15/s640x640/sh0.08/e35/12362289_1114157225291025_2018189734_n.jpg"}
+
+
+
+    .row
+      .col.s6
+        .card{style: "height: 236px"}
+          .card-content
+            .card-title
+              %a Human Featured?
+
+            .row.margin-none
+              .col.s6
+                .audience-metric-wrapper{style: "background-color: #E63D2F; color: white;"}
+                  %p 1400
+                  %p Avg. Likes / Image With A Human
+              .col.s6
+                .audience-metric-wrapper
+                  %p 1100
+                  %p Avg. Likes / Image Without A Human
+
+      .col.s6
+        .card
+          .card-content
+            .card-title 
+              %a Most Engaged
+
+            .row
+              .col.s3
+                %p
+                  %span Device
+                %p.audience-dimension Mobile
+                %ul.audience-metrics
+                  %li 70% of Likes
+                  %li 80% of Comments
+                  %li 75% of Regrams
+              .col.s3
+                %p
+                  %span Gender
+                %p.audience-dimension Female
+                %ul.audience-metrics
+                  %li 90% of Likes
+                  %li 92% of Comments
+                  %li 93% of Regrams
+              .col.s3
+                %p
+                  %span Age
+                %p.audience-dimension 25-34
+                %ul.audience-metrics
+                  %li 40% of Likes
+                  %li 60% of Comments
+                  %li 30% of Regrams
+              .col.s3
+                %p
+                  %span Location
+                %p.audience-dimension NYC
+                %ul.audience-metrics
+                  %li 15% of Likes
+                  %li 10% of Comments
+                  %li 11% of Regrams
+
+
+
+:javascript
+  $(document).ready(function(){
+
+    var images_chart = c3.generate({
+      bindto: "#images-chart",
+      size: {height: 150},
+      data: {
+        columns: [
+          ['Bags', 64.3]
+        ],
+        type: 'gauge'
+      },
+      color: {
+        pattern: ['#E63D2F', '#E63D2F'],
+        threshold: {
+          values: [25, 75]
+        }
+      }
+    })
+    var gc = function(target_id){
+      var likes_chart = c3.generate({
+        bindto: target_id,
+        size: {height: 160},
+        data:{
+          columns: [
+            ['Bags', 1018, 1126, 0, 0, 0, 1215, 1726, 757, 1641, 1327, 1208, 0, 0, 1390],
+            ['Non-Bags', 0, 0, 933, 1123, 1353, 0, 0, 0, 0, 0, 0, 1388, 1019, 0]
+          ],
+          colors: {
+            'Bags': '#E63D2F',
+            'Non-Bags': '#E0E0E0'
+          },
+          type: 'bar',
+          groups: [['Bags', 'Non-Bags']]
+        },
+        axis: {
+          y: {show: false}
+        },
+        legend: {
+          show: false
+        }
+      })
+    }
+
+    gc("#likes-chart")
+    gc("#comments-chart")
+    gc("#regrams-chart")
+  })

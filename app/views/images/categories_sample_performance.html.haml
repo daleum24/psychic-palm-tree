@@ -1,0 +1,110 @@
+.body-content
+  .page-overview-wrapper
+    %h1 Bags
+    %select.browser-default.date-selector
+      %option{disabled: true, selected: true} Jan 1, 2015 - Mar 31, 2015
+    .clear
+
+    %ul.section-nav
+      %li
+        =link_to "All Images", categories_sample_path
+      %li.selected
+        =link_to "Performance", categories_sample_performance_path
+      %li
+        =link_to "Creative Insights", categories_sample_creative_path
+      %li
+        =link_to "Audience", categories_sample_audience_path
+
+
+    =link_to "< Back To Categories", categories_path, class: "breadcrumbs"
+
+  .container.container-fluid
+    .row
+      .col.s4
+        .card
+          .card-content
+            %p.performance-metric-label Likes
+            .row.margin-none
+              .col.s6
+                %p.performance-agg-metric
+                  %span 12,780
+                  %span Total
+              .col.s6
+                %p.performance-agg-metric
+                  %span 1,278
+                  %span Avg / Post
+      .col.s4
+        .card
+          .card-content
+            %p.performance-metric-label Comments
+            .row.margin-none
+              .col.s6
+                %p.performance-agg-metric
+                  %span 231
+                  %span Total
+              .col.s6
+                %p.performance-agg-metric
+                  %span 23
+                  %span Avg / Post
+      .col.s4
+        .card
+          .card-content
+            %p.performance-metric-label Regrams
+            .row.margin-none
+              .col.s6
+                %p.performance-agg-metric
+                  %span 149
+                  %span Total
+              .col.s6
+                %p.performance-agg-metric
+                  %span 15
+                  %span Avg / Post
+
+    .row
+      .col.s12
+        .card
+          .card-content
+            .card-title Trends
+            #performance-chart
+
+    .row
+      .col.s6
+        .card
+          .card-content
+            .card-title Top Performers
+            .row.margin-none
+              -@top_performers.each do |image|
+                .col.s4
+                  .image-wrapper
+                    %img{src: image[:url]}
+      .col.s6
+        .card
+          .card-content
+            .card-title Weak Performers
+            .row.margin-none
+              -@weak_performers.each do |image|
+                .col.s4
+                  .image-wrapper
+                    %img{src: image[:url]}
+
+:javascript
+  var likes_chart = c3.generate({
+    bindto: '#performance-chart',
+    data: {
+      columns: [
+        ['Likes', 0, 0, 923, 0, 0, 0, 0, 0, 0, 0, 0, 1360, 0, 1327, 1201, 1324, 1628, 0, 1700, 1202, 0, 0, 0, 1106, 1009],
+        ['Comments', 0, 0, 10, 0, 0, 0, 0, 0, 0, 0, 0, 42, 0, 24, 20, 11, 31, 0, 49, 10, 0, 0, 0, 16, 18],
+        ['Regrams', 0, 0, 9, 0, 0, 0, 0, 0, 0, 0, 0, 21, 0, 11, 12, 7, 28, 0, 33, 5, 0, 0, 0, 10, 13]
+      ],
+      type: 'bar',
+    },
+    axis: {
+      y: {
+        label: {
+          text: 'Likes',
+          position: 'outer-middle'
+        },
+      }
+    }
+  });
+

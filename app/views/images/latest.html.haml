@@ -1,0 +1,265 @@
+.body-content
+  .page-overview-wrapper
+    %h1 Account Overview
+    %select.browser-default.date-selector
+      %option{disabled: true, selected: true} Last 14 Days
+
+    .clear
+    %a.modal-trigger{href: "#modal1"} Modal
+
+  .container.container-fluid
+
+    .row
+      .col.s3
+        .card.category-hl-metric-card
+          .card-content
+            .card-title Bag Images Posted
+            %p.main-metric 14
+            .chart-wrapper
+              #images-chart
+            %p{style: "text-align:center;margin-top:10px;font-size:16px;"} Of All Images Posted During Last 14 Days
+
+
+
+      .col.s3
+        .card.category-hl-metric-card
+          .card-content
+            .card-title Likes
+            %p.main-metric 12,000
+            .chart-wrapper
+              #likes-chart
+            .row.metrics-wrapper.mbm
+              .col.s12
+                %p 1333
+                %p / Image
+
+      .col.s3
+        .card.category-hl-metric-card
+          .card-content
+            .card-title Comments
+            %p.main-metric 500
+            .chart-wrapper
+              #comments-chart
+            .row.metrics-wrapper.mbm
+              .col.s12
+                %p 55
+                %p / Image
+
+
+      .col.s3
+        .card.category-hl-metric-card
+          .card-content
+            .card-title Regrams
+            %p.main-metric 150
+            .chart-wrapper
+              #regrams-chart
+            .row.metrics-wrapper.mbm
+              .col.s12
+                %p 20
+                %p / Image
+
+    .row
+      .col.s8
+        .card.nav-card
+          .card-content
+            .card-title Top Performers
+            .row
+              .col.s4
+                .image-wrapper
+                  %img{src: "https://scontent-lga3-1.cdninstagram.com/hphotos-xfp1/t51.2885-15/e35/12346189_1681096708813591_1927376991_n.jpg"}
+              .col.s4
+                .image-wrapper
+                  %img{src: "https://scontent-lga3-1.cdninstagram.com/hphotos-xpf1/t51.2885-15/sh0.08/e35/p750x750/12338632_557640971051596_1099580737_n.jpg"}
+              .col.s4
+                .image-wrapper
+                  %img{src: "https://scontent-lga3-1.cdninstagram.com/hphotos-xfa1/t51.2885-15/e35/12338962_1095163373836024_1496721073_n.jpg"}
+
+      .col.s4
+        .card.nav-card
+          .card-content
+            .card-title Top Categories
+
+            .row.top-category
+              .col.s1
+                .fa.fa-chevron-up.font-green
+              .col.s1
+                %p.rank 1
+              .col.s4
+                %a.name Christmas
+              .col.s6
+                .trendline
+
+            .row.top-category
+              .col.s1
+                .fa.fa-chevron-down.font-red
+              .col.s1
+                %p.rank 2
+              .col.s4
+                %a.name Bags
+              .col.s6
+                .trendline
+
+            .row.top-category
+              .col.s1
+                .fa.fa-chevron-up.font-green
+              .col.s1
+                %p.rank 3
+              .col.s4
+                %a.name Shoes
+              .col.s6
+                .trendline
+
+            .row.top-category
+              .col.s1
+                .fa.fa-chevron-up.font-green
+              .col.s1
+                %p.rank 4
+              .col.s4
+                %a.name Runway
+              .col.s6
+                .trendline
+
+            -# .row.top-category
+              .col.s1
+                .fa.fa-chevron-down.font-red
+              .col.s1
+                %p.rank 5
+              .col.s4
+                %a.name Sweaters
+              .col.s6
+                .trendline
+
+
+
+    .row
+      .col.s8
+        .card.nav-card
+          .card-content
+            .card-title Strongest Colors
+            .color-fingerprint
+      .col.s4
+        .card.nav-card
+          .card-content
+            .card-title Most Engaged
+            .row
+              .col.s12
+                .top-audience
+                  %p.name Device
+                  .row
+                    .col.s4
+                      %a.top Mobile
+                    .col.s8
+                      %p.metric
+                        %span 7,500
+                        %span Likes
+                        %span (75%)
+                .top-audience
+                  %p.name Gender
+                  .row
+                    .col.s4
+                      %a.top Female
+                    .col.s8
+                      %p.metric
+                        %span 9,000
+                        %span Likes
+                        %span (90%)
+
+                .top-audience
+                  %p.name Age
+                  .row
+                    .col.s4
+                      %a.top 25 - 30
+                    .col.s8
+                      %p.metric
+                        %span 5,000
+                        %span Likes
+                        %span (50%)
+
+                .top-audience
+                  %p.name Location
+                  .row
+                    .col.s4
+                      %a.top NYC
+                    .col.s8
+                      %p.metric
+                        %span 2,000 
+                        %span Likes
+                        %span (20%)
+
+
+  #modal1.modal
+    .modal-content
+      %h4 Welcome To PicassoLabs!
+      %p.mbm To get you started, we've categorized all of your Instagram posts so that you can begin to understand what type of images your users find engaging
+
+      .row
+        .col.s3
+          .image-wrapper
+            %img{src: "https://scontent-lga3-1.cdninstagram.com/hphotos-xfp1/t51.2885-15/s640x640/sh0.08/e35/c0.93.750.750/12346189_1681096708813591_1927376991_n.jpg"}
+          %p.category-name Christmas
+        .col.s3
+          .image-wrapper
+            %img{src: "https://scontent-lga3-1.cdninstagram.com/hphotos-xap1/t51.2885-15/s640x640/sh0.08/e35/12331473_790408621104894_1046676783_n.jpg"}
+          %p.category-name Shoes
+        .col.s3
+          .image-wrapper
+            %img{src: "https://scontent-lga3-1.cdninstagram.com/hphotos-xpf1/t51.2885-15/e35/12357544_450091828514341_1038922104_n.jpg"}
+          %p.category-name Bags
+        .col.s3
+          .image-wrapper
+            %img{src: "https://scontent-lga3-1.cdninstagram.com/hphotos-xta1/t51.2885-15/s640x640/sh0.08/e35/12120331_398893860309100_1821438568_n.jpg"}
+          %p.category-name Runway
+      .row
+        .col.s4
+        .col.s4
+        .col.s4
+    .modal-footer
+      %a.modal-action.modal-close.btn-flat{href: "#!"} Cool Beans!
+
+
+:javascript
+  $(document).ready(function(){
+    $(".modal-trigger").click(function(){
+      $('#modal1').openModal();
+    })
+
+    var chart = c3.generate({
+      bindto: '#main-chart',
+      data: {
+        columns: [
+          ['Christmas', 3000],
+          ['Shoes', 1500],
+          ['Bags', 1100],
+          ['Runway', 700]
+        ],
+        type: 'bar'
+      }
+    })
+
+    var gc = function(target_id){
+      var likes_chart = c3.generate({
+        bindto: target_id,
+        size: {height: 160},
+        data:{
+          columns: [
+            ['Images', 1018, 1126, 933, 1123, 1353, 1215, 1726, 757, 1641, 1327, 1208, 1388, 1019, 1390],
+          ],
+          colors: {
+            'Images': '#E63D2F'
+          },
+          type: 'bar',
+        },
+        axis: {
+          y: {show: false}
+        },
+        legend: {
+          show: false
+        }
+      })
+    }
+
+    gc("#likes-chart")
+    gc("#comments-chart")
+    gc("#regrams-chart")
+
+  })

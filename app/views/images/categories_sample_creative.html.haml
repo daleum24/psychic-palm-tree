@@ -1,0 +1,284 @@
+.body-content
+  .page-overview-wrapper
+    %h1 Bags
+    %select.browser-default.date-selector
+      %option{disabled: true, selected: true} Last 14 Days
+
+    .clear
+
+    %ul.section-nav
+      %li
+        =link_to "Overview", categories_sample_path
+      %li
+        =link_to "All Images", categories_sample_images_path
+      %li.selected
+        =link_to "Image Attributes", categories_sample_creative_path
+      %li
+        =link_to "Audience", categories_sample_audience_path
+
+
+    =link_to "< Back To Categories", categories_path, class: "breadcrumbs"
+
+  .container.container-fluid
+    .row
+      .col.s12
+        %ul.audience-engagement-btns
+          %li.btn.selected Human Elements
+          %li.btn.btn-flat Brand Elements
+          %li.btn.btn-flat Color
+          %li.btn.btn-flat Custom
+
+    .row
+      .col.s12
+        %h5
+          %a Human Featured?
+        .row
+          .col.s6.feature-segment-wrapper
+            .card.mbm.feature-segment-wrapper
+              .card-content
+                .card-title
+                  %a With A Human
+                .col.s6
+                  %ul.feature-performance
+                    %li
+                      %p 9
+                      %p Images Posted
+                    %li
+                      %p 1400
+                      %p Avg. Likes / Image
+                    %li
+                      %p 60
+                      %p Avg. Comments / Image
+                    %li
+                      %p 25
+                      %p Avg. Regrams / Image
+                .col.s6
+                  %p{style: "font-weight: bold;"} Top Image
+                  .image-wrapper
+                    %img{src: "https://scontent-lga3-1.cdninstagram.com/hphotos-xfa1/t51.2885-15/s640x640/sh0.08/e35/c0.10.1080.1080/12345728_525051810997953_614409473_n.jpg"}
+                .clear
+          .col.s6.feature-segment-wrapper
+            .card.mbm
+              .card-content
+                .card-title
+                  %a Without a Human
+                .col.s6
+                  %ul.feature-performance
+                    %li
+                      %p 2
+                      %p Images Posted
+                    %li
+                      %p 1100
+                      %p Avg. Likes / Image
+                    %li
+                      %p 40
+                      %p Avg. Comments / Image
+                    %li
+                      %p 15
+                      %p Avg. Regrams / Image
+                .col.s6
+                  %p{style: "font-weight: bold;"} Top Image
+                  .image-wrapper
+                    %img{src: "https://scontent-lga3-1.cdninstagram.com/hphotos-xfp1/t51.2885-15/s640x640/sh0.08/e35/c0.23.750.750/12356345_1091780057513241_1034412660_n.jpg"}
+                .clear
+
+
+    .row
+      .col.s12
+        %h5
+          %a Gender
+        .row
+          .col.s4.feature-segment-wrapper
+            .card.mbm.feature-segment-wrapper
+              .card-content
+                .card-title
+                  %a Male
+                .col.s6
+                  %ul.feature-performance
+                    %li
+                      %p 0
+                      %p Images Posted
+                    %li
+                      %p 0
+                      %p Avg. Likes / Image
+                    %li
+                      %p 0
+                      %p Avg. Comments / Image
+                    %li
+                      %p 0
+                      %p Avg. Regrams / Image
+                .col.s6
+                  %p{style: "font-weight: bold;"} Top Image
+                  %p You have not posted a Bag image with a Male since October 1, 2015
+                .clear
+          .col.s4.feature-segment-wrapper
+            .card.mbm
+              .card-content
+                .card-title
+                  %a Female
+                .col.s6
+                  %ul.feature-performance
+                    %li
+                      %p 9
+                      %p Images Posted
+                    %li
+                      %p 1400
+                      %p Avg. Likes / Image
+                    %li
+                      %p 60
+                      %p Avg. Comments / Image
+                    %li
+                      %p 25
+                      %p Avg. Regrams / Image
+                .col.s6
+                  %p{style: "font-weight: bold;"} Top Image
+                  .image-wrapper
+                    %img{src: "https://scontent-lga3-1.cdninstagram.com/hphotos-xfa1/t51.2885-15/s640x640/sh0.08/e35/c0.10.1080.1080/12345728_525051810997953_614409473_n.jpg"}
+                .clear
+
+          .col.s4.feature-segment-wrapper
+            .card.mbm
+              .card-content
+                .card-title
+                  %a Both
+                .col.s6
+                  %ul.feature-performance
+                    %li
+                      %p 0
+                      %p Images Posted
+                    %li
+                      %p 0
+                      %p Avg. Likes / Image
+                    %li
+                      %p 0
+                      %p Avg. Comments / Image
+                    %li
+                      %p 0
+                      %p Avg. Regrams / Image
+                .col.s6
+                  %p{style: "font-weight: bold;"} Top Image
+                  %p You have not a posted a Bag image with both genders since November 1, 2015
+                .clear
+
+
+    .row
+      .col.s12
+        %h5
+          %a Hand Featured?
+        .row
+          .col.s6.feature-segment-wrapper
+            .card.mbm.feature-segment-wrapper
+              .card-content
+                .card-title
+                  %a With A Hand
+                .col.s6
+                  %ul.feature-performance
+                    %li
+                      %p 50
+                      %p Images Posted
+                    %li
+                      %p 1000
+                      %p Avg. Likes / Image
+                    %li
+                      %p 500
+                      %p Avg. Comments / Image
+                    %li
+                      %p 100
+                      %p Avg. Regrams / Image
+                .col.s6
+                  %p{style: "font-weight: bold;"} Top Image
+                  .image-wrapper
+                    %img{src: "https://scontent-lga3-1.cdninstagram.com/hphotos-xfa1/t51.2885-15/s640x640/sh0.08/e35/c0.10.1080.1080/12345728_525051810997953_614409473_n.jpg"}
+                .clear
+          .col.s6.feature-segment-wrapper
+            .card.mbm
+              .card-content
+                .card-title
+                  %a Without a Hand
+                .col.s6
+                  %ul.feature-performance
+                    %li
+                      %p 50
+                      %p Images Posted
+                    %li
+                      %p 1000
+                      %p Avg. Likes / Image
+                    %li
+                      %p 500
+                      %p Avg. Comments / Image
+                    %li
+                      %p 100
+                      %p Avg. Regrams / Image
+                .col.s6
+                  %p{style: "font-weight: bold;"} Top Image
+                  .image-wrapper
+                    %img{src: "https://scontent-lga3-1.cdninstagram.com/hphotos-xfp1/t51.2885-15/s640x640/sh0.08/e35/c0.23.750.750/12356345_1091780057513241_1034412660_n.jpg"}
+                .clear
+
+
+
+      -# -@features.each_with_index do |feature, index|
+        .col.s6
+          .card.mbm
+            .card-content
+              .card-title
+                %a= feature[:name]
+              .row
+                .col.s8
+                  %div{id: "bar_chart_#{index+1}"}
+                .col.s4
+                  %div{id: "pie_chart_#{index+1}"}
+
+
+:javascript
+  var bar_chart = function(target, yes, no){
+    c3.generate({
+      bindto: target,
+      size: {height: 150},
+      data:{
+        columns: [
+          ['Yes', yes],
+          ['No', no]
+        ],
+        type: 'bar',
+        colors: {
+          'Yes' : '#005486',
+          'No' : '#E63D2F'
+        }
+      },
+      axis: {
+        rotated: true
+      }
+    })
+  }
+
+  var pie_chart = function(target, yes, no){
+    c3.generate({
+      bindto: target,
+      size: {height: 150},
+      data: {
+        // iris data from R
+        columns: [
+          ['Yes', yes],
+          ['No', no],
+        ],
+        type : 'pie',
+        colors: {
+          'Yes': '#005486',
+          'No': '#E63D2F'
+        }
+      }
+    });
+  }
+
+  bar_chart("#bar_chart_1", 100, 200)
+  bar_chart("#bar_chart_2", 50, 250)
+  bar_chart("#bar_chart_3", 200, 100)
+  bar_chart("#bar_chart_4", 150, 150)
+
+  pie_chart("#pie_chart_1", 5, 10)
+  pie_chart("#pie_chart_2", 2, 13)
+  pie_chart("#pie_chart_3", 8, 7)
+  pie_chart("#pie_chart_4", 3, 12)
+
+

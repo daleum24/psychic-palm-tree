@@ -1,0 +1,85 @@
+#layout-1
+  .navigation-components
+    #top-nav
+      %nav
+        .nav-wrapper
+          .logo
+          .account-buttons
+            .account-button#settings
+            .account-button#help
+              %a Help
+            .account-button#profile
+              %a Dale Um
+
+    #side-nav
+      #display-button.btn-floating.waves-effect.waves-light
+        .fa.fa-arrow-left
+        .fa.fa-arrow-right
+      #side-nav-content
+        %select.browser-default
+          %option{disabled: true, selected: true} Instagram
+        %ul
+          %li
+            .nav-icon
+            =link_to "Home", home_path
+          %li
+            .nav-icon
+            =link_to "Categories", categories_path
+          %li
+            .nav-icon
+            =link_to "Performance", segmentation_path
+          %li
+            .nav-icon
+            =link_to "Audience", demographics_path
+          %li
+            .nav-icon
+            =link_to "Color", color_path
+          %li
+            .nav-icon
+            =link_to "Competitor Watch", competitor_watch_path
+
+:javascript
+  $(document).ready(function(){
+
+    var collapse = function(){
+      $(".fa-arrow-left").hide()
+      $(".fa-arrow-right").show()
+
+      $("#side-nav").width(0)
+      $(".version-1").css("padding-left", "30px")
+
+      $("#side-nav-content").hide()
+
+      Cookies.set('nav_state', "collapsed");
+    }
+
+    var expand = function(){
+      $(".fa-arrow-right").hide()
+      $(".fa-arrow-left").show()
+
+      $("#side-nav").width(195)
+      $(".version-1").css("padding-left", "225px")
+
+      $("#side-nav-content").show()
+
+      Cookies.set('nav_state', "expanded")
+    }
+
+    current_state = Cookies.get("nav_state")
+
+    if (current_state == undefined) {
+      Cookies.set("nav_state", "expanded")
+    } else if (current_state == "collapsed") {
+      collapse()
+    }
+
+    $("#display-button").click(function(){
+      new_state = Cookies.get('nav_state');
+
+      if (new_state === "expanded"){
+        collapse();
+      } else{
+        expand()
+      }
+    })
+  })

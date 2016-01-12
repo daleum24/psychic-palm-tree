@@ -1,0 +1,43 @@
+.body-content
+  .page-overview-wrapper
+    %h1 Bags
+    %select.browser-default.date-selector
+      %option{disabled: true, selected: true} Last 14 Days
+
+    .clear
+
+    %ul.section-nav
+      %li
+        =link_to "Overview", categories_sample_path
+      %li.selected
+        =link_to "All Images", categories_sample_images_path
+      %li
+        =link_to "Image Attributes", categories_sample_creative_path
+      %li
+        =link_to "Audience", categories_sample_audience_path
+
+    -# %a.main-cta.btn-floating.btn-large.waves-effect.waves-light
+      .fa.fa-plus.fa-2x
+
+    =link_to "< Back To Categories", categories_path, class: "breadcrumbs"
+
+  .container.container-fluid
+    .row
+      %a.dropdown-button.btn.main-sort{"href" => "#", "data-activates" => "dropdown1"} Sorted By Date
+
+      %ul#dropdown1.dropdown-content
+        %li
+          %a{href: "#!"} one
+        %li
+          %a{href: "#!"} one
+
+    .row
+      .col.s12
+        .card
+          .card-content
+            -@images.each do |image|
+              .col.s3
+                .image-wrapper.mbm
+                  %img{src: image[:url]}
+
+            .clear

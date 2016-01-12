@@ -1,0 +1,24 @@
+.body-content
+  .page-overview-wrapper
+    %h1 Bags
+
+    .clear
+
+    %ul.section-nav
+      %li
+        =link_to "All Images", categories_sample_path
+      %li
+        =link_to "Performance", categories_sample_performance_path
+      %li
+        =link_to "Creative", categories_sample_creative_path
+      %li.selected
+        =link_to "Audience", categories_sample_audience_path
+
+    -# %a.main-cta.btn-floating.btn-large.waves-effect.waves-light
+      .fa.fa-plus.fa-2x
+
+    =link_to "< Back To Categories", categories_path, class: "breadcrumbs"
+
+  .container.container-fluid
+    .row
+ 

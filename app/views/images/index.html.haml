@@ -1,0 +1,38 @@
+.body-content
+  .page-overview-wrapper
+    %h1 Images
+
+    .clear
+
+    %ul.section-nav
+      %li
+        =link_to "Categories", categories_path
+      %li.selected
+        =link_to "All Images", images_path
+
+
+    %a.main-cta.btn-floating.btn-large.waves-effect.waves-light
+      .fa.fa-filter.fa-2x
+
+    %a.secondary-cta.btn-floating.btn-large.waves-effect.waves-light
+      .fa.fa-tags.fa-2x
+
+  .container.container-fluid
+    .row
+      %a.dropdown-button.btn.main-sort{"href" => "#", "data-activates" => "dropdown1"} Sorted By Date
+
+      %ul#dropdown1.dropdown-content
+        %li
+          %a{href: "#!"} one
+        %li
+          %a{href: "#!"} one
+
+    .row
+      .col.s12
+        .card
+          .card-content
+            -@images.each do |image|
+              .col.s2
+                .image-wrapper.mbm
+                  %img{src: image[:url]}
+            .clear

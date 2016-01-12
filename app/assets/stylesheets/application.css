@@ -1,0 +1,129 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ *= require font-awesome
+ *= require c3
+ */
+
+html,body{
+  height: 100%;
+}
+
+body{
+  background-color: #EEEEEE;
+}
+
+.body-content{
+  min-height: 1000px;
+}
+
+.version-1{
+  padding-top: 50px;
+  padding-left: 225px;
+}
+
+.container-fluid{
+  width: 100%;
+  padding: 30px 40px;
+}
+
+.card{
+  margin-bottom: 0px;
+}
+
+.nav-card{
+  height: 340px;
+}
+
+.card-content > .card-title{
+  color: rgb(85, 85, 89);
+  font-size: 18px;
+  margin-bottom: 15px;
+  line-height: 110%;
+  font-weight: 400;
+}
+
+.clear{
+  clear: both;
+}
+
+.main-sort{
+  margin-left: 10px;
+}
+
+.images-performance-summary{
+  height: 100%;
+  background: light-grey;
+}
+
+.images-collection{
+  height: 100%;
+  padding-bottom: 15px;
+}
+
+.image-wrapper{
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  padding-bottom: 100%;
+}
+
+.image-wrapper > img{
+  position: absolute;
+  width: 100%;
+}
+
+.image-details{
+  width: 100%;
+  padding: 5px;
+  margin-bottom: 15px;
+}
+
+.image-detail{
+  width: 50%;
+  float: left;
+  text-align: center;
+}
+
+.page-overview-wrapper{
+  background: #00ADEF;
+  position: relative;
+  width: 100%;
+  padding-top: 40px;
+  padding-left: 40px;
+  height: 120px;
+}
+.page-overview-wrapper > h1{
+  margin: 0px;
+  color: white;
+  font-size: 32px;
+  float: left;
+  width: 50%;
+}
+
+.page-overview-wrapper > select{
+  float: right;
+  width: 200px;
+  margin-right: 40px;
+}
+
+.margin-none{
+  margin: 0px;
+}
+
+.mbm{
+  margin-bottom: 20px;
+}
+
+

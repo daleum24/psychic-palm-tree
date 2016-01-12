@@ -1,0 +1,37 @@
+#layout-2
+  .navigation-components
+    #top-nav
+      %nav
+        .nav-wrapper
+          .account-buttons
+            .account-button#settings
+            .account-button#help
+              %a Help
+            .account-button#profile
+              %a Dale Um
+
+    -# #side-nav
+      %select.browser-default
+        %option{disabled: true, selected: true} Instagram
+      %ul
+        %li
+          .nav-icon
+          =link_to "Home", home_path
+        -# %li
+          .nav-icon
+          =link_to "My Images", my_images_path
+        %li
+          .nav-icon
+          =link_to "Segmentation", segmentation_path
+        -# %li
+          .nav-icon
+          =link_to "Head-To-Head", head_to_head_path
+        %li
+          .nav-icon
+          =link_to "Demographics", demographics_path
+        %li
+          .nav-icon
+          =link_to "Color", color_path
+        %li
+          .nav-icon
+          =link_to "Competitor Watch", competitor_watch_path
